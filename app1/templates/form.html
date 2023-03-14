@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style type="text/css">
+.error{
+color: red
+}
+</style>
+</head>
+<body>
+ <form method="post" id="frm">
+        <table cellpadding="5">
+            <tr>
+                <td>Name</td>
+                <td><input type="text" name="name" id="name"><br>
+                <!-- <label id="name-error" class="error" for="name"></label></td> -->
+                <td id="v_name"></td>
+               
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td><input type="text" name="email"id="email"></td>
+                <td id="v_email">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="pwd" id="pwd"></td>
+                <td id="messageBox">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>Confirm Password</td>
+                <td><input type="password" name="cpwd" id="cpwd"></td>
+                <td id="v_cpwd">&nbsp;</td>
+            </tr>
+
+            <tr>
+                <td>MESSAGE</td>
+                <td><textarea name="msg" id="msg"></textarea></td>
+                <td id="v_msg">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>GENDER</td>
+                <td>
+                Male<input type="radio" name="gender" value="male">
+                Female<input type="radio" name="gender" value="female">
+                </td>
+                <td id="v_gender">&nbsp;</td>
+</tr>
+            <tr>
+
+
+</tr>
+            <tr>
+<td>District</td>
+<td><select name="dist" id="dist">
+<option selected="selected" disabled="disabled" value="">Select District</option>
+<option value="Trivandrum">Trivandrum</option>
+<option value="Kollam">Kollam</option>
+<option value="pathanamthitta">Pathanamthitta</option>
+<option value="Alappuzha">Alappuzha</option>
+<option value="Kottayam">Kottayam</option>
+<option value="Ernakulam">Eranakulam</option>
+<option value="Idukki">Idukki</option>
+<option value="Thrissur">Thrissur</option>
+<option value="malappuram">Malappuram</option>
+<option value="palakkad">Palakkad</option>
+<option value="kozhikkode">Kozhikkode</option>
+<option value="wayanad">Wayanad</option>
+<option value="kannoor">Kannoor</option>
+<option value="kasargod">Kasargod</option>
+</select></td>
+<td id="v_dist">&nbsp;</td>
+</tr>
+            <tr>
+            <td></td>
+            <td><input type="submit" name="submit" value="Register" id="reg"></td>
+            </tr>
+
+
+        </table>
+    </form>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.js"></script>
+   <script type="text/javascript">
+    $('#frm').validate({
+    rules: {
+    name: {
+    required: true,
+    minlength: 5
+    },
+    email:{
+    required:true,
+    email:true
+    },
+    pwd:{
+    required:true,
+    minlength:5
+    },
+    cpwd:{
+    required:true,
+    equalTo: "#pwd"
+    },
+    gender:{
+    required:true
+    },
+    dist:{
+    required:true
+    },
+  msg:{
+  required:true
+  }
+    
+
+    }
+   
+   
+    })
+   
+   
+   </script>
+</body>
+
+</html>
